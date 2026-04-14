@@ -5,8 +5,8 @@
    Tutorial 5
    Tutorial Case
    
-   Author:   
-   Date:     
+   Author:   Morgan Gray
+   Date:     07/04/2026
    
    Filename: tf_flex.css
    
@@ -20,8 +20,33 @@
    Base Flex Styles
    ================
 */
+body{
+   display: flex;
+   flex-flow: row wrap;
+}
 
+header, footer{
+   width: 100%;
+}
 
+aside{
+   /*flex-basis: 120px;
+   flex-grow: 1;
+   flex-shrink: 1;*/
+   flex: 1 1 120px;
+}
+
+section#main{
+   flex: 3 1 361px;
+}
+
+section#topics{
+   display: flex;
+}
+
+section#topics article{
+   flex: 1 1 200px;
+}
 
 
 /* =========================
@@ -30,8 +55,13 @@
 */
 
 @media only screen and (max-width: 480px) {
-  
-
+   aside{
+   order: 99;
+}
+footer{
+   order: 100;
+}
+   
  
 }
 
@@ -41,7 +71,15 @@
 */
 
 @media only screen and (min-width: 481px) {
-
+   nav.horizontal ul{
+      display: flex;
+      flex-flow: row nowrap;
+      
+   }
+   
+   nav.horizontal li{
+      flex: 1 1 auto;
+   }
 
 
 }
